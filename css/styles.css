@@ -17,6 +17,9 @@ h1{
 	color: #fff;
 }
 
+h2{
+	margin: 20px 10px;
+}
 .testimonial-text{
 	font-family: 'Montserrat-bold', sans-serif;
 	font-size: 3rem;
@@ -128,3 +131,38 @@ p{
 {
 	padding: 3% 2%;
 } */
+
+
+.problem-table{
+	border-collapse: collapse;
+	font-size: 0.9em;
+	margin: 25px 10px;
+	min-width: 80%;
+}
+
+.problem-table thead tr
+{
+	background-color: #8f8f8f;
+	color: #fff;
+	text-align: left;
+}
+
+.problem-table th,
+.problem-table td {
+	padding: 12px 15px;
+}
+
+.problem-table tbody tr{
+	border-bottom: 1px solid #dddd;
+}
+
+.problem-table tbody tr:last-of-type
+{
+	border-bottom: 2px solid #8f8f8f;
+}
+
+.prob-categories{
+	border: 1px solid #000;
+	margin: 10px 50px;
+	padding: 0;
+}
