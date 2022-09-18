@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <title>Knapsack</title>
+    <title>Problems</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +14,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
+    
 </head>
 
-<body style="background-image: url(bgImage.jpg); background-size: cover;">
+<body style="background-image: url(bgImage.jpg); background-size: cover;" onload="sortOnLoad()">
     <section id="title">
         <!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a id="Knapsack" class="navbar-brand" style="padding: 0 15px;" href="">Knapsack</a>
+          <a id="Knapsack" class="navbar-brand" style="padding: 0 15px;" href="home.html">Knapsack</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -28,10 +29,17 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="">Sign-up</a>
-                </li>
                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">User</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="">Profile</a></li>
+                        <li><a class="dropdown-item" href="">Logout</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Problems.html">Problems</a>
+                </li>
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Problems</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="">Data Structures</a></li>
@@ -41,7 +49,7 @@
                         <li><a class="dropdown-item" href="">More Categories</a></li>
                         
                     </ul>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="">Track Your Progress</a>
                 </li>
@@ -53,19 +61,25 @@
         
         <div>
             <div class="row">
-                <div class="col-lg-3 prob-categories">
+                <div class="col-lg-3 prob-categories" style="height: 420px;">
                     <div style="background-color: #ddd; margin-top: 10px; border-radius: 5px;">
                         <h3 style="text-align: center; margin:0;">Categories</h3>
                     </div>
-                    <form action="/" method="post">
-                        <label style="margin-top: 20px; color: #000; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #fff; display: block; text-align: center;" for="tagsInput">Select Tag</label>
+                    <form action="file:///D:/code/Knapsack(Project)/Knapsack/Problems.html" method="post">
+                        <label style="margin: 30px 0; color: #000; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #fff; display: block; text-align: center;" for="tagsInput">Select Tag</label>
                         <!-- <input style="margin: 5% 0; background-color: #ddd; height: auto; width: auto; display: inline-block;" id="tagsInput" type="text" name="tagName"> -->
-                        <div class="search-box">
+                        <div class="search-box" style="margin-top: 50px">
                             <button class="btn-search"><i class="fas fa-search"></i></button>
-                            <input type="text" class="input-search" placeholder="Type to Search...">
-                          </div>
-                        <button style="margin: 10% 40%" class="btn btn-outline-dark btn-lg dw-btn" type="submit">Go</button>
+                            <input type="text" onkeyup="sort()" class="input-search" placeholder="Type to Search...">
+                        </div>
+                        <!-- <button style="margin: 10% 40%" class="btn btn-outline-dark btn-lg dw-btn" type="submit">Go</button> -->
+                        <label style="margin: 30px 0; color: #000; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #fff; display: block; text-align: center;" for="tagsInput">Select Website</label>
+                        <div class="search-box" style="margin-top: 50px">
+                            <button class="btn-search"><i class="fas fa-search"></i></button>
+                            <input type="text" onkeyup="sortBySite()" class="input-search" id="site" placeholder="Type to Search...">
+                        </div>
                     </form>
+
                 </div>
                 <div class="col-lg-7" style="margin-left:10%">
                     <div><h2>Problems</h2></div>
@@ -78,19 +92,89 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Watermelon</td>
+                                    <td><a href="https://codeforces.com/problemset/problem/4/A">Watermelon</a></td>
+                                    <td>Codeforces</td>
+                                    <td>Brute Force</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://codeforces.com/problemset/problem/282/A">Bit++</a></td>
                                     <td>Codeforces</td>
                                     <td>Implementation</td>
                                 </tr>
                                 <tr>
-                                    <td>Games</td>
-                                    <td>Codechef</td>
-                                    <td>Implementation</td>
+                                    <td><a href="https://www.hackerrank.com/challenges/array-left-rotation/problem?isFullScreen=true">Left-rotation</a></td>
+                                    <td>Hackerrank</td>
+                                    <td>Data Stuctures</td>
                                 </tr>
                                 <tr>
-                                    <td>Fruits</td>
-                                    <td>Codeforces</td>
+                                    <td><a href="https://www.hackerrank.com/challenges/get-the-value-of-the-node-at-a-specific-position-from-the-tail/problem?isFullScreen=true">Get Node Value</a></td>
+                                    <td>Hackerrank</td>
                                     <td>Data Structures</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://codeforces.com/problemset/problem/1728/E">Red-black Pepper</a></td>
+                                    <td>Codeforces</td>
+                                    <td>Algorithms</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://codeforces.com/problemset/problem/1729/G">Cut Substrings</a></td>
+                                    <td>Codeforces</td>
+                                    <td>Dynamic Programming</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://www.spoj.com/problems/ABCDEF/">ABCDEF</a></td>
+                                    <td>SPOJ</td>
+                                    <td>Binary Search</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://codeforces.com/problemset/problem/1729/F">Kirei and the Linear Function</a></td>
+                                    <td>Codeforces</td>
+                                    <td>Hashing</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://www.spoj.com/problems/ADABLOOM/">Ada and Bloom</a></td>
+                                    <td>SPOJ</td>
+                                    <td>Graphs</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://www.spoj.com/problems/ACRYM2/">Acronym II</a></td>
+                                    <td>SPOJ</td>
+                                    <td>Strings</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://codeforces.com/problemset/problem/1726/D">Graphs</a></td>
+                                    <td>Codeforces</td>
+                                    <td>Graphs</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://codeforces.com/problemset/problem/1726/D">Graphs</a></td>
+                                    <td>Codeforces</td>
+                                    <td>Graphs</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://codeforces.com/problemset/problem/1726/D">Graphs</a></td>
+                                    <td>Codeforces</td>
+                                    <td>Graphs</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://codeforces.com/problemset/problem/1726/D">Graphs</a></td>
+                                    <td>Codeforces</td>
+                                    <td>Graphs</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://codeforces.com/problemset/problem/1726/D">Graphs</a></td>
+                                    <td>Codeforces</td>
+                                    <td>Algorithms</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://www.spoj.com/problems/ADAPEAR/">Ada and Pear</a></td>
+                                    <td>SPOJ</td>
+                                    <td>Data Structures</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://codeforces.com/problemset/problem/1726/D">Graphs</a></td>
+                                    <td>Codeforces</td>
+                                    <td>Graphs</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -99,4 +183,8 @@
             </div>
         </div>      
     </section>
+    <script src="category.js"></script>
+    <script src="sort.js"></script>
+
+    
 </body>
