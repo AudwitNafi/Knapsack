@@ -3,6 +3,9 @@
     <meta charset="utf-8">
     <title>Knapsack</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&family=Play&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&family=Play&family=Sawarabi+Mincho&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 
@@ -13,7 +16,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body style="background-image: url(bgImage.jpg); background-size: cover;">
     <section id="title">
         <!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -50,17 +53,21 @@
         
         <div>
             <div class="row">
-                <div class="col-lg-2 prob-categories">
-                    <div style="background-color: #ddd;">
+                <div class="col-lg-3 prob-categories">
+                    <div style="background-color: #ddd; margin-top: 10px; border-radius: 5px;">
                         <h3 style="text-align: center; margin:0;">Categories</h3>
                     </div>
                     <form action="/" method="post">
-                        <label style="margin:auto" for="tagsInput">Select Tag</label>
-                        <input style="margin: 10% 0" id="tagsInput" type="text" name="tagName">
-                        <button style="margin: 10% 50%" type="submit">Go</button>
+                        <label style="margin-top: 20px; color: #000; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #fff; display: block; text-align: center;" for="tagsInput">Select Tag</label>
+                        <!-- <input style="margin: 5% 0; background-color: #ddd; height: auto; width: auto; display: inline-block;" id="tagsInput" type="text" name="tagName"> -->
+                        <div class="search-box">
+                            <button class="btn-search"><i class="fas fa-search"></i></button>
+                            <input type="text" class="input-search" placeholder="Type to Search...">
+                          </div>
+                        <button style="margin: 10% 40%" class="btn btn-outline-dark btn-lg dw-btn" type="submit">Go</button>
                     </form>
                 </div>
-                <div class="col">
+                <div class="col-lg-7" style="margin-left:10%">
                     <div><h2>Problems</h2></div>
                     <div class="problem-set">
                         <table class="problem-table">

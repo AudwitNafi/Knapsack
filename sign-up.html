@@ -7,18 +7,19 @@
     </head>
     <body>
         <div class="login">
-            <h1><i class="fa fa-user-circle"></i> Sign-up Here</h1>
+            <h1>Sign-up Here</h1>
             <form>
-                <p>Name</p>
-                <input type="text" name="" placeholder="Enter Username">
+                <p>Username</p>
+                <input type="text" name="" placeholder="Enter Username" required>
+                <p>Email</p>
+                <input type="email" placeholder="Enter Email" required>
                 <p>Password</p>
-                <input type="password" name="" placeholder="Enter Password">
+                <input type="password" name="" placeholder="(8 characters minimum)" minlength="8" required>
                 <p>Confirm Password</p>
-                <input type="password" name="" placeholder="Enter Password">
+                <input type="password" name="" placeholder="Enter password again" required>
                 <input type="submit" name="" value="Sign-up"><br>
-                
-                <a href="start.html">Create New Account</a>
             </form>
+            <a href="start.html">Already have an account? Login</a>
         </div>
     </body>
 </html>

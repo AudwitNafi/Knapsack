@@ -19,16 +19,16 @@ app.post("/", function(req, res){
                 const problemTag = problemsetData.result[i].problem.tags;
                 const problemName = problemsetData.result[i].problem.name;
                 if(problemTag.includes(tag)){
-                    // console.log(problemName);
-                    var table = document.querySelector(".problem-table");
-                    var row = table.insertRow(i);
-                    var c1, c2, c3;
-                    c1 = row.insertCell(0);
-                    c1 = row.insertCell(1);
-                    c1 = row.insertCell(2);
-                    c1.innerHTML = problemName;
-                    c2.innerHTML = "Codeforces";
-                    c3.innerHTML = tag;
+                    console.log(problemName);
+                    // var table = document.querySelector(".problem-table");
+                    // var row = table.insertRow(i);
+                    // var c1, c2, c3;
+                    // c1 = row.insertCell(0);
+                    // c1 = row.insertCell(1);
+                    // c1 = row.insertCell(2);
+                    // c1.innerHTML = problemName;
+                    // c2.innerHTML = "Codeforces";
+                    // c3.innerHTML = tag;
                 } 
             }
         });
